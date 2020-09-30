@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+int main()
+{
+	ll n,a,b,min,max,d;
+	cin>>n;
+	while(n--)
+	 {
+		 cin>>a>>b;
+		 if(a<b) {min=a;max=b;}
+		 else if(b<a) {min=b;max=a;}
+		 else if(a==b) {min=a;max=b;}
+		 d=max/min;
+         cout<<d<<"\n";
+	 }
+ 
+	return 0;
+}
