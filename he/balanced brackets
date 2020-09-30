@@ -1,0 +1,38 @@
+#solution
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{ ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+	int t,len,i;
+	cin>>t;
+	while(t--){
+	string ar;
+	cin>>ar;
+    len = ar.length();
+	stack<char> sta;
+	sta.push(ar[0]);
+ 
+	for(i=1;i<len;i++)
+	 { 
+	     if(!sta.empty())
+	     {if((sta.top()=='{')&&(ar[i]=='}'))
+	        sta.pop();
+		else if((sta.top()=='[')&&(ar[i]==']'))
+	        sta.pop();
+		else if((sta.top()=='(')&&(ar[i]==')'))
+	        sta.pop();		 
+		else 
+		    sta.push(ar[i]);
+ 		 
+	      }
+	     else
+	       sta.push(ar[i]);
+	 }
+	  if(sta.empty()==1) 
+	     cout<<"YES"<<"\n";
+	  else
+	    cout<<"NO"<<"\n";
+}
+	 return 0; 
+}
